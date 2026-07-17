@@ -20,7 +20,11 @@ Run `fetch-android --help` for flags (manifest URL, branch, source directory, gi
 build-android
 ```
 
-Run `build-android --help` for flags (lunch target, source directory).
+The build output itself is written to a log file, `<source-dir>/out/build-android.log` by default, while the terminal shows only a spinner with the elapsed time. When the build finishes, a summary line is printed. If the build fails, the last 30 lines of the log are shown to help with diagnosis.
+
+Run `build-android --verbose` to stream the full build output to the terminal instead.
+
+Run `build-android --help` for flags (`lunch` target, source directory, log file, verbose mode).
 
 Lower-level tools (`lunch`, `m`, `ninja`) are available after loading Android's `envsetup.sh`:
 
